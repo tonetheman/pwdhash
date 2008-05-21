@@ -1,0 +1,26 @@
+#!/usr/bin/python
+
+import wx
+import os
+
+app = wx.PySimpleApp()
+
+dlg = wx.TextEntryDialog(None, "Put in a url...", "pwdhash gui")
+dlg.ShowModal()
+
+outf = open("/home/agcc/projects/pwdhash/dbg.txt", "w+")
+outf.write("this was input: %s\n" % (dlg.GetValue(),))
+
+cmd = "/usr/bin/jrunscript /home/agcc/projects/pwdhash/run.js %s stinkycheese1"
+cmd = cmd % (dlg.GetValue(),)
+outf.write("cmd is: %s\n" % (cmd,))
+outf.close()
+
+data = os.popen(cmd).read()
+
+dlg2 = wx.MessageDialog(dlg, "You picked :  %s" % (data,), "info", style=wx.OK)
+dlg2.ShowModal()
+dlg2.Destroy()
+
+dlg.Destroy()
+
