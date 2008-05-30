@@ -1,2 +1,0 @@
-this was input: google.com
-cmd is: /usr/bin/jrunscript /home/agcc/projects/pwdhash/run.js google.com stinkycheese1
