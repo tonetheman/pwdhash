@@ -1,0 +1,5 @@
+to push changes made on local back to github
+
+git push origin
+
+origin should be defined in the .git/config
